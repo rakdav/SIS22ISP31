@@ -29,6 +29,7 @@ namespace Lab4
         {
             InitializeComponent();
             client = new HttpClient();
+
         }
 
         private async void Button_Click(object sender, RoutedEventArgs e)
