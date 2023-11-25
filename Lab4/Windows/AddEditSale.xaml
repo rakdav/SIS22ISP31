@@ -1,0 +1,49 @@
+﻿<Window x:Class="Lab4.AddEditSale"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lab4"
+        mc:Ignorable="d"
+        Title="Добавление продажи" Height="550" Width="500">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0">
+            <Label Content="Выберите датy" Margin="50 0"/>
+            <DatePicker x:Name="DatePicker" Margin="50 10"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1">
+            <Label Content="Введите фио" Margin="50 0"/>
+            <TextBox x:Name="FIO" Margin="50 10"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2">
+            <Label Content="Выберите марку" Margin="50 0"/>
+            <ComboBox x:Name="cbMarka" Margin="50 10" SelectionChanged="cbMarka_SelectionChanged"/>
+        </StackPanel>
+        <StackPanel Grid.Row="3">
+            <Label Content="Комплект" Margin="50 0"/>
+            <Label x:Name="lbComplect" Margin="50 10" FontSize="20"/>
+        </StackPanel>
+        <StackPanel Grid.Row="4">
+            <Label Content="Введите скидку" Margin="50 0"/>
+            <TextBox x:Name="tbDiscounr" Margin="50 10" FontSize="20" TextChanged="tbDiscounr_TextChanged"/>
+        </StackPanel>
+        <StackPanel Grid.Row="5">
+            <Label Content="Итоговая цена" Margin="50 0"/>
+            <Label x:Name="lbPrice" Margin="50 10" FontSize="20"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="6" HorizontalAlignment="Center">
+            <Button Content="OK" Width="150" Margin="10" Click="Button_Click"/>
+            <Button Content="Cancel" Width="150" Margin="10" Click="Button_Click_1"/>
+        </StackPanel>
+    </Grid>
+</Window>
