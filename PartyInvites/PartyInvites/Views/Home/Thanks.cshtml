@@ -1,0 +1,26 @@
+﻿@model GuestResponse;
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Спасибо!!!</title>
+</head>
+<body>
+    <div>
+        <h1>@Model?.Name, спасибо за ответ!</h1>
+        @if (Model?.WillAttend == true)
+        {
+            @:Великолепно!!!
+            @:Алкоголь включен в приглашение
+        }
+        else
+        {
+            @:Прошу прощение за беспокойство
+        }
+        <a asp-action="ListResponse">Назад</a>
+    </div>
+</body>
+</html>

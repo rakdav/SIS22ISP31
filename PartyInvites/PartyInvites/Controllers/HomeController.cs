@@ -10,9 +10,16 @@ namespace PartyInvites.Controllers
         {
             return View();
         }
+        [HttpGet]
         public ViewResult RSVPForm()
         {
             return View();
+        }
+        [HttpPost]
+        public ViewResult RSVPForm(GuestResponse guestResponse)
+        {
+            Repository.AddResponse(guestResponse);
+            return View("Thanks",guestResponse);
         }
     }
 }
