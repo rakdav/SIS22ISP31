@@ -1,9 +1,13 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PartyInvites.Models
 {
     public class GuestResponse
     {
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Key, Column(Order = 0)]
+        public int Id { get; set; }
         [Required(ErrorMessage ="Введите ваше имя")]
         public string? Name {  get; set; }
         [Required(ErrorMessage = "Введите ваш email")]

@@ -6,6 +6,11 @@ namespace PartyInvites.Controllers
 {
     public class HomeController : Controller
     {
+        ApplicationContext db;
+        public HomeController(ApplicationContext context)
+        {
+            db = context;
+        }
         public IActionResult Index()
         {
             return View();
@@ -20,6 +25,8 @@ namespace PartyInvites.Controllers
         {
             if (ModelState.IsValid)
             {
+                db.GuestResponses.Add(guestResponse);
+                db.SaveChangesAsync();
                 Repository.AddResponse(guestResponse);
                 return View("Thanks", guestResponse);
             }
@@ -27,7 +34,7 @@ namespace PartyInvites.Controllers
         }
         public ViewResult ListResponse()
         {
-            return View(Repository.Response.Where(p=>p.WillAttend==true));
+            return View(db.GuestResponses.Where(p=>p.WillAttend==true));
         }
     }
 }
